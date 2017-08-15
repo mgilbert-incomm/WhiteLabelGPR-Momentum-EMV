@@ -1,0 +1,51 @@
+.faq-item {
+  background: #f6f6f6;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.faq-item-header {
+  font-family: 'ProximaNova-Regular';
+  font-size: 20px;
+  line-height: 24px;
+  color: #4f4e4e;
+  font-weight: normal;
+  line-height: 1.2;
+  padding: 0.3125em 20px 0.375em 35px;
+}
+
+.faq-item-text {
+  font-family: 'ProximaNova-Regular';
+  font-size: 15px;
+  line-height: 23px;
+  color: #4f4e4e;
+  padding: 0.3125em 20px 0.375em 35px;
+}
+
+.accordian-plus {
+  background: url('/assets/accordion-plus-purple.gif') no-repeat 15px 12px;
+}
+
+.accordian-minus {
+  background: url('/assets/accordion-minus-purple.gif') no-repeat 15px 16px;
+}
+
+.collapsed {
+  -moz-transition: max-height .25s ease-out;
+  -ms-transition: max-height .25s ease-out;
+  -o-transition: max-height .25s ease-out;
+  -webkit-transition: max-height .25s ease-out;
+  transition: max-height .25s ease-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.not-collapsed {
+  -moz-transition: max-height .5s ease-in;
+  -ms-transition: max-height .5s ease-in;
+  -o-transition: max-height .5s ease-in;
+  -webkit-transition: max-height .5s ease-in;
+  transition: max-height .5s ease-in;
+  max-height: 1200px;
+  overflow: hidden;
+}

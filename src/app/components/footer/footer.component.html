@@ -1,0 +1,57 @@
+<div *ngIf="footerCmsModel">
+  <div class="backToTopContainer">
+    <a (click)="scrollToTop()" class="backToTop button-scroll">{{footerCmsModel.backToTop}}</a>
+  </div>
+  <footer class="dark-gray footerdiv">
+    <div class="menuBar">
+      <div class="topSection">
+        <div class="logoSection">
+          <a routerLink="/">
+            <img *ngIf="footerCmsModel" [src]="footerCmsModel.footerLogo" class="footerLogo">
+          </a>
+        </div>
+        <div class="footerLinks">
+          <ul>
+            <li *ngFor="let item of footerCmsModel.footerLinks">
+              <ng-container *ngIf="this.checkVisibility(item)">
+                <app-link [url]="item.linkUrl" (click)="scrollToTop()">{{item.linkName}}</app-link>
+              </ng-container>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="otherProductsContainer">
+        <span class="otherProductsTitle">
+          {{footerCmsModel.otherProductsHeader}}
+        </span>
+        <ul class="otherProductsLinks">
+          <li *ngFor="let item of footerCmsModel.otherProductsLinks">
+            <app-link [url]="item.linkUrl" (click)="scrollToTop()">{{item.linkName}}</app-link>
+          </li>
+        </ul>
+      </div>
+      <div class="socialIconContainer">
+        <ul class="socialIcons">
+          <ng-container *ngFor="let item of footerCmsModel.socialIcons">
+            <li>
+              <app-link [url]="item.socialWebsiteUrl" (click)="scrollToTop()">
+                <img *ngIf="item.iconUrl" [src]="item.iconUrl"/>
+              </app-link>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+      <footer-newsletter></footer-newsletter>
+    </div>
+    <div class="copyright">
+      Copyright ©{{currentYear}}&nbsp;InComm. All Rights Reserved.
+    </div>
+    <div class="legalText" [innerHtml]="footerCmsModel.footerCopy"></div>
+
+    <div class="footerLegalLinks">
+      <ul>
+        <li *ngFor="let item of footerCmsModel.footerLegalLinks"><app-link [url]="item.linkUrl" [target]="item.linkTarget">{{item.linkName}}</app-link></li>
+      </ul>
+    </div>
+  </footer>
+</div>

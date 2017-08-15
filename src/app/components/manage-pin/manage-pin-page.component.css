@@ -1,0 +1,23 @@
+.manage-pin-page-container{
+    border-top: 5px solid #f89d20;
+    background-color: white;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 35px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 25px;
+}
+
+@media screen and (max-width: 1120px) {
+    .manage-pin-page-container{
+        width: 85%;
+    }        
+}
+
+@media screen and (max-width: 765px){
+    .manage-pin-page-container{
+        width: 100%;
+    } 
+}

@@ -1,0 +1,40 @@
+<div class="home-page-form">
+  <div class="acct-summary-panel">
+    <div class="acct-summary-header-message">{{ acctSummaryContent.topLabel }}</div>
+    <div class="acct-summary-content">
+
+      <div class="acct-summary-available-balance-pane">
+        <span class="van">{{ acctSummaryContent.accountNumberLabel }} <span class="masked-number">**** *** **** {{ (userState.cardInfo && userState.cardInfo.cardNumber) ?  userState.cardInfo.cardNumber.substr(-4, 4) : '' }}</span></span>
+      </div>
+      <div class="acct-summary-available-balance-panel " >
+        <div class="aval-bal-lbl">{{ acctSummaryContent.availableBalanceLabel }}</div>
+        <span class="balance"> {{ (userState.balanceInfo) ? userState.balanceInfo.balance['toMoney'](2) : '' }}</span>
+      </div>
+      <div class="acct-summary-details-panel">
+        <div class="acct-summary-detail">
+          <span>{{ acctSummaryContent.originalValueLabel }}</span>
+          <span class="detail-value">  {{ (userState.balanceInfo) ? userState.balanceInfo.denomination['toMoney'](2) : '' }}</span>
+        </div>
+        <div class="acct-summary-detail">
+          <span>{{ acctSummaryContent.purchasesLabel }}</span>
+          <span> - {{ (userState.balanceInfo) ? userState.balanceInfo.totalDebits['toMoney'](2) : '' }}</span>
+        </div>
+        <div class="acct-summary-detail">
+          <span>{{ acctSummaryContent.activatedLabel }}</span>
+          <span>{{ (userState.balanceInfo) ? userState.balanceInfo.activationDate : ''}}</span>
+        </div>
+        <div class="acct-summary-detail">
+          <span>{{ acctSummaryContent.expirationDateLabel }}</span>
+          <span>  {{(userState.cardInfo) ? userState.cardInfo.expMonth : '' }}/ 20{{(userState.cardInfo) ? userState.cardInfo.expYear : '' }}</span>
+        </div>
+      </div>
+
+      <div class="acct-summary-footer-panel">
+        <p></p>
+        <p>
+        <a [routerLink]="'/logout'">{{ acctSummaryContent.checkAnotherBalanceLabel }}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

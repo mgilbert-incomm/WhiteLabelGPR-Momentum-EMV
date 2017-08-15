@@ -1,0 +1,59 @@
+.faq-container{
+}
+
+.faq-item-container{
+    flex: 2;
+}
+
+.contact-container{
+    flex: 1;
+    align-self: stretch;
+}
+
+.faq-header{
+    font-family: 'MuseoSlab-100';
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: normal;
+    color: #aaa9aa;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.faq-sub-header{
+    font-family: 'ProximaNova-Regular';
+    font-size: 15px;
+    line-height: 23px;
+    color: #4f4e4e;
+    display: block;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 770px) {
+
+    .faq-container{
+        flex-direction: column;
+
+        .faq-header {
+            font-size: 1.875em;
+            line-height: 36px;
+        }
+
+        .faq-sub-header{
+            font-size: 15px;
+            line-height: 23px;
+        }
+
+    }
+
+  .faq-item-container{
+    flex: 1;
+    padding-left:15px;
+    padding-right:15px;
+  }
+
+  .contact-container{
+    flex: 1;
+  }
+}

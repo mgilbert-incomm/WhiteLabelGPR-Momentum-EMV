@@ -1,0 +1,22 @@
+.login-page-container{
+    display: flex;
+    width: 79%;
+    height: 400px;
+    margin: 0 auto;
+    border-top: 5px solid #f89d20;    
+    background: #ffffff;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1220px) {
+    .login-page-container{
+            width: 88%;
+    }
+}
+
+@media screen and (max-width: 745px) {
+    .login-page-container{
+           border-top: 0;
+            width: 100%;
+    }
+}

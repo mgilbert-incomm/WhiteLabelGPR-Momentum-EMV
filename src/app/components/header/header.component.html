@@ -1,0 +1,107 @@
+<div class="header" *ngIf="headerCmsModel">
+
+  <div *ngIf="imageModalModel"
+    [ngClass]="{'modal-active': imageModalModel.isVisible, 'modal-disabled': !imageModalModel.isVisible}">
+      <div [ngClass]="{'modal-container-active': animateImageModal, 'modal-container-hidden': !animateImageModal}">
+        <div class="modal-close" (click)="toggleImageModal()">x</div>
+        <img class="modal-image" [src]="imageModalModel.imageSource"/>
+      </div>
+  </div>
+
+
+  <div class="mobileHeader" *ngIf="!desktopView">
+    <div class="mobileMenuContainer" #mobileMenuContainer [ngClass]="{'active': isMobileMenuActive}">
+      <div id="mobileMenu" class="mobile-menu">
+        <ul>
+          <!-- Top Navigation Links -->
+          <ng-container *ngFor="let item of headerCmsModel.upperHeaderLinks">
+            <li *ngIf="this.checkVisibility(item)">
+              <app-link [url]="item.linkUrl" (click)="this.toggleMobileMenu()">{{item.linkName}}</app-link>
+            </li>
+          </ng-container>
+
+
+          <!-- Bottom Navigation Links -->
+          <ng-container *ngFor="let item of headerCmsModel.btmNavigationLinks">
+            <li *ngIf="this.checkVisibility(item)">
+              <app-link [url]="item.linkUrl" (click)="this.toggleMobileMenu()">{{item.linkName}}</app-link>
+            </li>
+          </ng-container>
+          <!-- Program Names -->
+          <li class="program-names" [hidden]="!this.showProgramNamesInMobileMenu">
+            <ul>
+              <li *ngFor="let item of headerCmsModel.programNames">{{item}}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <img id="mobileMenuIcon" class="mobile-menu-icon" *ngIf="headerCmsModel"
+             [src]="headerCmsModel.mobileMenuIcon" (click)="toggleMobileMenu()"/>
+      </div>
+    </div>
+    <img class="mobile-logo" *ngIf="headerCmsModel" [src]="headerCmsModel.mobileLogo"/>
+  </div>
+  <div class="desktopHeader" *ngIf="desktopView">
+
+
+
+    <!-- Top Navigation -->
+    <div class="topNavigation" id="mainNavigation" [hidden]="!hasTopNavigation()">
+      <div>
+        <div class="top-nav-icon logo">
+          <ng-container *ngIf="headerCmsModel && headerCmsModel.programLogo">
+            <a routerLink="/">
+              <img [src]="headerCmsModel.programLogo"/>
+            </a>
+          </ng-container>
+        </div>
+
+
+        <!-- Program Names -->
+        <div class="program-names">
+          <ul>
+            <li *ngFor="let item of headerCmsModel.programNames" [ngClass]="this.getProgramNameClasses()">{{item}}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="top-nav-links upperHeaderLinks">
+          <ul>
+            <ng-container *ngFor="let item of headerCmsModel.upperHeaderLinks">
+              <li *ngIf="this.checkVisibility(item)">
+                <app-link [url]="item.linkUrl">{{item.linkName}}</app-link>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="btmNavigation" [hidden]="!this.hasBottomNavigation()">
+      <div>
+        <!-- if mainLogo attribute has been passed and has a non empty value, display code for main logo -->
+        <div class="btm-nav-icon">
+          <ng-container *ngIf="headerCmsModel && headerCmsModel.lowerLogo">
+            <a routerLink="/">
+              <img [src]="headerCmsModel.lowerLogo"/>
+            </a>
+          </ng-container>
+        </div>
+
+        <!-- Bottom navigation links -->
+        <div class="btm-nav-links bottomNavigationLinks">
+          <ul>
+            <ng-container *ngFor="let item of headerCmsModel.btmNavigationLinks">
+              <li *ngIf="this.checkVisibility(item)">
+                <app-link [url]="item.linkUrl" target="{{item.linkTarget}}">{{item.linkName}}</app-link>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

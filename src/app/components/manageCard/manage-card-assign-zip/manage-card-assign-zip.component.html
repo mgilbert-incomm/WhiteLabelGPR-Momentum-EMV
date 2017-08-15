@@ -1,0 +1,29 @@
+<div id="no_zip" style="overflow:hidden">
+  <h2>{{model.assignZipCodeLabel}}</h2>
+  <p [innerHtml]="model.assignZipCodeDescription"></p>
+  <br>
+  <label class="zipCodeLabel">{{model.zipCodeLabel}}</label>
+  <div id="lbl_zipcode" class="" [hidden]="this.editingZipCode">
+    <label class="large" id="update_lblzip" [hidden]="!this.userState.zipCode">
+									<span id="updatezip_code" class="currentZip">
+                    {{this.userState.zipCode}}
+									</span>
+    </label>
+    <br>
+    <a href="javascript:void(0);" id="btnEditZip" class="btnEditZip" (click)="this.toggleEditZipCode()"
+       [hidden]="this.editingZipCode">
+      <label>{{model.zipCodeEditLinkText}}</label>
+    </a>
+  </div>
+
+  <div id="az_buttons" [hidden]="!this.editingZipCode">
+    <input type="text" name="az_zipcode" id="az_zipcode" minlength="5" maxlength="5"
+           [(ngModel)]="zipCodeTemp"
+           placeholder="5 digits">
+    <br>
+    <p class="button-row">
+      <a href="javascript:void(0)" id="az_cancel_btn" class="textLink" (click)="this.toggleEditZipCode()">{{model.zipCodeLinkText}}</a>
+      <input type="button" name="az_btn" id="az_btn" class="button" (click)="this.setZipCode()" value="{{model.zipCodeSaveText}}">
+    </p>
+  </div>
+</div>

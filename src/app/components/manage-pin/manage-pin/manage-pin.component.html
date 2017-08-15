@@ -1,0 +1,19 @@
+<div *ngIf="managePinCmsModel">
+  <div class="manage-pin-component-container">
+    <div class="manage-pin-primary-panel">
+      <div class="manage-pin-title">{{managePinCmsModel.pageTitle}}</div>
+      <div class="manage-pin-page-description">{{managePinCmsModel.pageDescription}}</div>
+      <div class="manage-pin-select-header">{{managePinCmsModel.selectPinHeader}}</div>
+      <div class="manage-pin-select-description">{{managePinCmsModel.selectPinDescription}}</div>
+      <div class="manage-pin-clear-header">{{managePinCmsModel.clearPinHeader}}</div>      
+      <div class="manage-pin-clear-description" markdown-to-html [data]="managePinCmsModel.clearPinDescription"></div>
+      <button (click)="clearPin()" class="manage-pin-clear-button">{{managePinCmsModel.clearPinButtonLabel}}</button>
+    </div>    
+    <div class="manage-pin-aside-panel">
+      <div class="manage-pin-tips-header">{{managePinCmsModel.tipsHeader}}</div>
+      <div *ngFor="let faqItem of managePinCmsModel.tips">
+        <app-faq-item [faqItem]="faqItem"></app-faq-item>
+    </div>
+    </div>
+  </div>
+</div>

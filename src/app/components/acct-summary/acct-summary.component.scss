@@ -1,0 +1,505 @@
+* {
+  color: #656565;
+}
+
+app-acct-summary {
+  width: 100%;
+}
+
+.detail-value {
+  font-weight: bold;
+}
+
+.masked-number {
+  font-size: 12px;
+}
+
+.acct-summary-panel {
+  width: 360px;
+  border-top: 5px solid #f89d20;
+  background-color: white;
+  padding-bottom: 20px;
+//  margin: 65px auto 30px auto;
+}
+
+@media screen and (max-width: 320px) {
+  margin: 65px auto 30px auto;
+}
+
+@media screen and (max-width: 375px) {
+  margin: 65px auto 30px auto;
+}
+
+@media screen and (max-width: 425px) {
+  margin: 65px auto 30px auto;
+}
+
+@media screen and (max-width: 768px) {
+  margin: 65px auto 30px auto;
+}
+
+@media screen and (max-width: 1024px) {
+  margin-top: 47px;
+  margin-bottom: 25px;
+  margin-left: 2.08333%;
+  margin-right: 2.08333%;
+  width: 37.5%;
+
+}
+
+.acct-summary-footer-panel {
+  margin-top: 16px;
+}
+
+.acct-summary-content {
+  padding: 0 9px;
+}
+
+a {
+  color: #f89d20;
+  cursor: pointer;
+}
+
+.acct-summary-details-panel {
+  margin-top: 10px;
+}
+
+.van {
+  font-family: MuseoSlab-500;
+  float: right;
+  padding: 20px 20px 0 0;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.acct-summary-available-balance-panel .aval-bal-lbl {
+  //float: left;
+}
+
+.acct-summary-available-balance-panel {
+  width: 100%;
+}
+
+.acct-summary-detail:nth-child(2) {
+  font-weight: bold;
+}
+
+.acct-summary-available-balance-panel .balance {
+  display: inline-block;
+  line-height: 50px;
+  font-size: 50px;
+  vertical-align: baseline;
+  width: 100%;
+}
+
+.acct-summary-available-balance-panel span {
+  display: block;
+  line-height: 20px;
+}
+
+.acct-summary-detail {
+  padding: 12px 15px;
+  width: 100%;
+}
+
+.acct-summary-detail:nth-child(odd) {
+  background-color: #eeeeee;
+}
+
+.acct-summary-detail:last-child {
+  border-bottom: 2px solid #f6f6f6;
+}
+
+.acct-summary-detail span:nth-child(2) {
+  float: right;
+}
+
+.login-form{
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.notifications {
+  z-index: 60;
+  position: fixed;
+  _position: absolute;
+  width: 100%;
+}
+.notifications .message {
+  cursor: pointer;
+  position: fixed;
+  _position: absolute;
+  width: 100%;
+  min-height: 55px;
+  -webkit-background-size: 40px 40px;
+  -moz-background-size: 40px 40px;
+  background-size: 40px 40px;
+  background-color: #00b188;
+  color: white;
+}
+
+.notifications .message.error {
+  background: #d0202f;
+}
+.notifications .message h4 {
+  color: white;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.login-input{
+  font-family: "ProximaNova-Regular";
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #4f4e4e;
+  background-color: #f6f6f6;
+  background-repeat: no-repeat;
+  border-top: solid 1px #eeeeee;
+  border-left: solid 1px #eeeeee;
+  border-bottom: solid 1px #f1f1f1;
+  border-right: solid 1px #eeeeee;
+  -webkit-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+  vertical-align: middle;
+  padding: 8px;
+}
+
+.card-number {
+  width: 100%;
+  height: 44px;
+  @extend .login-input;
+}
+
+.card-number:focus {
+  border: 1px solid #aaa9aa;
+  box-shadow: 0 0 4px #d4d4d4;
+}
+
+.login-label{
+  color: #4f4e4e;
+  font-family: 'ProximaNova-Regular';
+  font-size: 15px;
+  line-height: 23px;
+  vertical-align: baseline;
+  font-weight: normal;
+}
+
+.card-num-panel label {
+  @extend .login-label;
+}
+
+.exp-cvv-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.exp-panel {
+  width: 70%;
+}
+
+.cvv-panel {
+  width: 30%;
+  position: relative;
+}
+
+
+
+
+.exp-panel label {
+  @extend .login-label;
+}
+
+.cvv-panel label {
+  @extend .login-label;
+}
+
+.cvv {
+  height: 44px;
+  width: 99px;
+  margin-bottom: 15px;
+  @extend .login-input;
+}
+
+.cvv-tooltip-img{
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.card-num-panel {
+  margin: 0 auto;
+  padding-top:16px;
+  padding-bottom: 16px;
+}
+
+.cvv-tooltip-hover-img{
+  position: absolute;
+  margin-left: 119px;
+}
+
+.cvv-tooltip-hover-img-active{
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms;
+}
+
+.cvv-tooltip-hover-img-inactive{
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms;
+}
+
+.exp-year {
+  height: 44px;
+  width: 99px;
+  margin-bottom: 15px;
+  @extend .login-input;
+}
+
+.exp-month {
+  @extend .exp-year;
+}
+
+.login-submit-button {
+  width: 100%;
+  height: 46px;
+  font-family: 'MuseoSlab-500';
+  font-size: 18px;
+  font-weight: normal;
+  background-color: rgb(79,78,78);
+  vertical-align: middle;
+  text-align: center;
+  background: #4f4e4e;
+  color: white !important;
+  border: none;
+  box-shadow: 2px 3px #c6c4c3;
+  padding: 13px 59px;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-radius: 1px;
+}
+
+.login-submit-button:hover {
+  text-decoration: none !important;
+  background: #d4d4d4;
+  color: #4f4e4e !important;
+  box-shadow: 2px 3px #c6c4c3;
+}
+
+.acct-summary-header-message {
+  margin-bottom: 20px;
+  padding-left: 18px;
+  padding-right: 20px;
+  padding-top: 18px;
+  font-family: 'MuseoSlab-500';
+  color: #4f4e4e;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+  vertical-align: baseline;
+}
+
+.login-footer-panel{
+  margin-top: 16px;
+}
+
+.login-footer-message {
+  background-color: #fbead6;
+  color: #4f4e4e;
+  border: solid 2px white;
+  padding: 20px 40px;
+  font-family: 'ProximaNova-Regular';
+  line-height: 15px;
+  font-size: 15px;
+  vertical-align: baseline;
+}
+
+.login-page-footer-message{
+  display: none;
+}
+
+//media queries for home page login form
+@media screen and (max-width: 768px) {
+  .home-page-form{
+    .acct-summary-panel{
+      max-width: 475px;
+      width: 90%;
+      margin: 0 auto;
+    }
+    .login-form{
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    .exp-year{
+      width: 120px;
+    }
+    .cvv{
+      width: 100%;
+    }
+    .login-button-container{
+      margin-top: 12px;
+    }
+    .login-footer-message{
+      padding: 30px 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .home-page-form{
+    .login-form-container{
+      width: 85%;
+    }
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .home-page-form{
+    .exp-year{
+      width: 42%;
+    }
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .home-page-form{
+    .login-footer-message{
+      padding: 30px 40px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 408px) {
+  .home-page-form{
+    .acct-summary-panel{
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .home-page-form{
+    .login-form{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+}
+//END media queries for home page login form
+
+
+
+
+
+// styling for the stand-alone login-page
+.login-page-form{
+  .card-num-panel{
+    padding-top: 30px;
+  }
+  .acct-summary-panel{
+    border: none;
+    width: 390px;
+  }
+  .acct-summary-header-message{
+    padding-right: 0px;
+    margin-top: 38px;
+  }
+  .login-submit-button{
+    width: 55%;
+    padding: 0px;
+  }
+  .login-form{
+    margin-left: 32px;
+  }
+  .login-footer-message{
+    display: none;
+  }
+  .login-page-footer-message{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    font-family: 'ProximaNova-Regular';
+    font-size: 15px;
+    line-height: 23px;
+    color: #656565;
+    background-color: white;
+  }
+}
+
+//media queries for stand-alone login page
+@media screen and (max-width: 745px) {
+  .login-page-form{
+    .acct-summary-panel{
+      border-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .login-page-form{
+    .acct-summary-panel{
+      width: 90%;
+    }
+  }
+}
+@media screen and (max-width: 387px) {
+  .login-page-form{
+    .exp-year{
+      width: 40%;
+    }
+    .cvv{
+      width: 90%;
+    }
+    .login-page-footer-message{
+      padding: 4px;
+    }
+  }
+}
+/*
+@media screen and (max-width: 380px) {
+  .login-page-form{
+    .cvv-tooltip-hover-img{
+      margin-left: 20.5%;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .login-page-form{
+    .cvv-tooltip-hover-img{
+      margin-left: 18.5%;
+    }
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .login-page-form{
+    .cvv-tooltip-hover-img{
+      margin-left: 14.5%;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .login-page-form{
+    .cvv-tooltip-hover-img{
+      margin-left: 12.5%;
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .login-page-form{
+    .cvv-tooltip-hover-img{
+      margin-left: 10.5%;
+    }
+  }
+}
+*/
+// END styling for the stand-alone login-page

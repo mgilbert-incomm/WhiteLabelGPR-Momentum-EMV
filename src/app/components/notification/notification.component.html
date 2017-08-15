@@ -1,0 +1,13 @@
+<ng-container *ngIf="showMessage">
+  <div *ngFor="let notification of notifications" class="{{ notificationCss(notification) }}  notifications">
+    <div class="message {{ notificationCss(notification) }}">
+      <div class="message-container">
+    <div class="left"><img src="assets/icon-notification-error.png"></div>
+        <div class="center"><h4> {{notification.message}}</h4></div>
+        <div class="right"><a class="close" (click)="removeNotification(notification)"><img src="assets/btn-close.png"></a></div>
+      </div>
+
+    </div>
+  </div>
+</ng-container>
+

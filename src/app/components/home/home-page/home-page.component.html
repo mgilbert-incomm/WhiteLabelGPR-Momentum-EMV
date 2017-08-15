@@ -1,0 +1,17 @@
+<div *ngIf="homePageCmsModel">
+  <div class="home-page-container" [ngStyle]="{'background-image': 'url(' + heroImage +')'}">
+    <div class="login-form-container" *ngIf="!this.userService.userStateModel.loggedIn">
+      <app-login-form-component [isLoginPageForm]="false"></app-login-form-component>
+    </div>
+    <div class="login-form-container" *ngIf="this.userService.userStateModel.loggedIn">
+      <app-acct-summary style="width: 100%;"></app-acct-summary>
+    </div>
+  </div>
+  <div class="tip-boxes-container">
+    <!-- <div class="tip-boxes-panel"> -->
+      <div *ngFor="let tipBoxCmsModel of homePageCmsModel.tipBoxCmsModels">
+        <app-tip-box [tipBoxCmsModel]="tipBoxCmsModel"></app-tip-box>
+    </div>
+    <!-- </div>     -->
+  </div>
+</div>

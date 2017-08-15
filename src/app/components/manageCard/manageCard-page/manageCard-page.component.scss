@@ -1,0 +1,151 @@
+:host {
+  width: 100%;
+}
+.manageCardPageContainer {
+  margin-bottom: 20px;
+  .mobileSubNavigation {
+    display: none;
+    padding-bottom: 20px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .mobileSubNavigationLogo {
+    float: left;
+    width: 46px;
+  }
+  .manageCardTabs {
+    width: 100%;
+  }
+  .currentTab,.mobileTab {
+    font-size: 16px;
+    font-family: 'MuseoSlab-500';
+    padding: 12px;
+  }
+  .currentTab {
+    overflow: hidden;
+    background: #f89d20;
+    color: white;
+    height: 46px;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  .mobileTabs {
+    color: white;
+    height: 46px;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+  .mobileTab {
+    padding-left: 58px; /* 46px + 12px padding */
+    background-color: #fbead6;
+    color: #f89d20;
+    font-size: 16px;
+    font-family: 'MuseoSlab-500';
+    height: 46px;
+    &:hover {
+      background: #f89d20;
+      color: white;
+    }
+  }
+
+  .printTransactionsContainer {
+    position: fixed;
+    top: 0;
+    left: -500px;
+  }
+  .accountDetails {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 25px !important;
+    border-top: 2px solid #eeeeee;
+    .balAndCardInfoContainer {
+      display: flex;
+      flex-wrap: wrap;
+      .balance {
+        label {
+          display: inline-block;
+          color: #4f4e4e;
+          font-size: 50px;
+          line-height: 20px;
+          margin-top: 10px;
+          margin-bottom: 0;
+        }
+      }
+      .cardInfo {
+        white-space: nowrap;
+        padding-left: 15px;
+      }
+    }
+    h1 {
+      flex: 0 0 100%;
+      font-family: 'MuseoSlab-100';
+      font-size: 40px;
+      line-height: 48px;
+      font-weight: normal;
+      color: #aaa9aa;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+  }
+  .manageCardTabs {
+    .subNavIcon {
+      display: none;
+    }
+    .tabs {
+      display: flex;
+      width: 100%;
+      padding-left: 0;
+      .tab {
+        padding: 10px;
+        &.selected {
+          cursor: default;
+          background: #f89d20;
+          color: white;
+        }
+        cursor: pointer;
+        list-style-type: none;
+        display: inline-block;
+        flex: 1 1 50%;
+        text-align: center;
+        background-color: #fbead6;
+        color: #f89d20;
+        font-size: 16px;
+        font-family: 'MuseoSlab-500';
+        &:first-child {
+          margin-right: 5px;
+        }
+      }
+    }
+    .tabContentContainer {
+      display: flex;
+      flex-wrap: wrap;
+      .tabContent {
+        flex: 1 1;
+      }
+      .cardTipContainer {
+        flex: 0 0 260px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .manageCardPageContainer {
+    .mobileSubNavigation {
+      display: block;
+    }
+    .manageCardTabs {
+      .tabs {
+        display: none;
+      }
+      .tabContentContainer {
+        .tabContent {
+          width: 100%;
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+}

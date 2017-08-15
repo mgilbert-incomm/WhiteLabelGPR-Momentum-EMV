@@ -1,0 +1,49 @@
+<script>
+  function print() {
+    window.print();
+  }
+</script>
+<img class="headerImage" *ngIf="printCmsModel?.headerImage" src="{{printCmsModel.headerImage}}"/>
+
+<div class="printHeader" *ngIf="printCmsModel?.headerText">{{printCmsModel?.headerText}}</div>
+<div class="cardInfoContainer">
+  <div class="description info" [innerHTML]="printCmsModel?.description"></div>
+  <div class="virtualAccountNumber info">{{printCmsModel?.virtualAccountNumberLabel}} <span class="value">{{ this.userService.userStateModel?.cardInfo?.cardNumber }}</span>
+  </div>
+  <div class="expirationDate info">{{printCmsModel?.expirationDateLabel}} <span class="value">{{ userService.userStateModel?.cardInfo?.expMonth }} / 20{{ userService.userStateModel?.cardInfo?.expYear }}</span></div>
+  <div class="cvv info">{{printCmsModel?.cvvLabel}} <span class="value">{{ this.userService.userStateModel?.cardInfo?.cvv }}</span></div>
+</div>
+<div class="virtualCard">
+  <img *ngIf="printCmsModel" [src]="printCmsModel?.virtualCardImage"/>
+</div>
+<div class="balanceInfo" *ngIf="this.userState?.balanceInfo">
+  <div>
+    <span class="cardActivityLabel">{{printCmsModel?.cardActivityLabel}} {{this.currentDateTime}}</span>
+  </div>
+  <div>
+    <span class="availableBalanceLabel">
+      {{manageCardCmsModel?.availableBalanceLabel}}
+    </span>
+  </div>
+  <div class="availableBalance">
+    {{this.userState.balanceInfo.balance['toMoney'](2)}}
+  </div>
+
+  <div class="summaryContent">
+    <div class="originalValue rowValue">
+        <span class="balSummCol">{{balanceTransactionsCmsModel?.originalValueLabel}}</span><span class="balSummCol">{{this.denomination}}</span>
+    </div>
+    <div class="purchases rowValue">
+      <span class="balSummCol">{{balanceTransactionsCmsModel?.purchasesLabel}}</span><span class="balSummCol">{{this.totalDebits}}</span>
+    </div>
+    <div class="purchases rowValue">
+      <span class="balSummCol">{{balanceTransactionsCmsModel?.activatedLabel}}</span><span class="balSummCol">{{ userService.userStateModel?.balanceInfo?.activationDate}}</span>
+    </div>
+    <div class="expiration rowValue">
+      <span class="balSummCol">{{balanceTransactionsCmsModel?.expirationDateLabel}}</span><span class="balSummCol">{{ userService.userStateModel?.cardInfo?.expMonth }} / 20{{ userService.userStateModel?.cardInfo?.expYear }}</span>
+    </div>
+  </div>
+</div>
+<div class="footerImage">
+  <img *ngIf="printCmsModel" [src]="printCmsModel?.footerImage"/>
+</div>

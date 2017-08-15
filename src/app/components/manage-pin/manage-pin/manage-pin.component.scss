@@ -1,0 +1,121 @@
+.manage-pin-component-container{
+    display: flex;
+}
+
+.manage-pin-title{
+    color: #aaa9aa;
+    font-family: 'MuseoSlab-100';
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 48px;
+    margin-bottom: 10px;
+    vertical-align: baseline;
+}
+
+.manage-pin-descriptions{
+    color: #656565;
+    font-family: 'ProximaNova-Regular';
+    font-size: 15px;
+    line-height: 23px;
+}
+
+.manage-pin-page-description{
+    @extend .manage-pin-descriptions;
+    margin-bottom: 16px;
+}
+
+.manage-pin-headers{
+    color: #4f4e4e;
+    font-family: 'MuseoSlab-500';
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 26px;
+    margin-bottom: 10px;
+    vertical-align: baseline;    
+}
+
+.manage-pin-select-header{
+    @extend .manage-pin-headers;
+}
+
+.manage-pin-select-description{
+    @extend .manage-pin-descriptions;
+    margin-bottom: 16px;
+}
+
+.manage-pin-clear-header{
+    @extend .manage-pin-headers;
+    padding-bottom: 10px;
+}
+
+.manage-pin-clear-description{
+    @extend .manage-pin-descriptions;
+    text-align: left;
+    vertical-align: baseline;
+}
+
+.manage-pin-clear-button{
+    width: 202px;
+    height: 48px;
+    font-family: 'MuseoSlab-500';
+    font-size: 18px;
+    font-weight: normal;
+    background-color: rgb(79,78,78);
+    vertical-align: middle;
+    text-align: center;
+    background: #4f4e4e;
+    color: white !important;
+    border: none;
+    box-shadow: 2px 3px 0px 0px #c6c4c3;
+    padding: 13px 59px;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 1px;
+    cursor: pointer;
+    margin-bottom:3px;
+    white-space: pre;
+}
+
+.manage-pin-clear-button:hover{
+    text-decoration: none !important;
+    background: #d4d4d4;
+    color: #4f4e4e !important;
+    box-shadow: 2px 3px #c6c4c3;
+}
+
+.manage-pin-tips-header{
+    color: #4f4e4e;
+    font-family: 'MuseoSlab-500';
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 20px;
+    vertical-align: baseline;
+}
+
+.manage-pin-primary-panel{
+    flex: 2;
+    padding-right: 30px;
+}
+
+.manage-pin-aside-panel{
+    flex: 1;
+    margin-top: 60px;
+}   
+
+@media screen and (max-width: 765px) {
+    .manage-pin-component-container{
+        flex-direction: column;
+    }
+    .manage-pin-title{
+        font-size: 28.125px;
+        line-height: 36px;
+    }
+    .manage-pin-primary-panel{
+        padding-right:0px;
+    }
+    .manage-pin-aside-panel{
+        margin-top: 20px;
+    }
+}

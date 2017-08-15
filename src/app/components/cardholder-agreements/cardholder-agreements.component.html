@@ -1,0 +1,9 @@
+<div class="cardholder-agreements-container pageContainer" *ngIf="cardholderAgreementsCmsModel">
+  <div class="cardholder-agreements-header">{{cardholderAgreementsCmsModel.cardholderAgreementsHeader}}</div>
+  <p class="cardholder-agreements-subheader">{{cardholderAgreementsCmsModel.cardholderAgreementsSubheader}}</p>
+  <div class="cardholder-agreements-anchor-container" *ngFor="let pdfLink of cardholderAgreementsCmsModel.pdfLinks">
+    <a class="cardholder-agreements-anchor" [href]="pdfLink.pdfLinkUrl" target="_blank">
+      <img *ngIf="cardholderAgreementsCmsModel" class="cardholder-agreements-anchor-image" [src]="cardholderAgreementsCmsModel.pdfImageUrl" />{{pdfLink.pdfLinkText}}
+    </a>
+  </div>
+</div>

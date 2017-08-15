@@ -1,0 +1,68 @@
+h2 {
+  font-family: 'MuseoSlab-500';
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 26px;
+  color: #4f4e4e;
+  margin-bottom: 10px;
+  padding-top: 0;
+  margin-top: 0;
+}
+.summary {
+  display: flex;
+  span {
+    font-family: 'ProximaNova-Regular';
+    font-size: 16px;
+    flex: 1 1 50%;
+    &:first-of-type {
+      padding-left: 20px;
+    }
+    &:last-of-type {
+      text-align: right;
+      font-weight: bold;
+      padding-right: 20px;
+    }
+  }
+}
+hr {
+  border: none;
+  height: 2px;
+  background: #eeeeee;
+}
+.balTransContainer {
+  margin-right: 40px;
+}
+.transactionsHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  .printTransactionsContainer {
+    a {
+      color: #f89d20;
+      text-decoration: none;
+    }
+  }
+}
+.transactionHeader {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: ProximaNova-Regular;
+  display: flex;
+  justify-content: space-between;
+  color: #aaa9aa;
+  margin-bottom: 5px;
+  .datehead {
+    padding-left: 20px;
+  }
+  .amounthead {
+    padding-right: 20px;
+  }
+}
+.transaction {
+  display: flex;
+  padding: 10px 20px;
+  line-height: 23px;
+  justify-content: space-between;
+}
+.transaction:nth-child(odd) {
+  background-color: #eeeeee;
+}

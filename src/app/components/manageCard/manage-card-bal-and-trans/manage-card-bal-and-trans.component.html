@@ -1,0 +1,83 @@
+<div class="balTransContainer">
+  <div class="balanceSummaryContainer">
+    <h2>{{model.balanceSummaryHeader}}</h2>
+    <div class="summary">
+      <span>{{model.activatedLabel}}</span>
+      <span>{{userState?.balanceInfo?.activationDate}}</span>
+    </div>
+    <div class="summary">
+      <span>{{model.expirationDateLabel}}</span>
+      <span>{{ userService.userStateModel?.cardInfo?.expMonth }} / 20{{ userService.userStateModel?.cardInfo?.expYear }}</span>
+    </div>
+    <div class="summary">
+      <span>{{model.originalValueLabel}}</span>
+      <span>{{ denomination }}</span>
+    </div>
+    <div class="summary">
+      <span>{{model.purchasesLabel}}</span>
+      <span>{{ totalDebits }}</span>
+    </div>
+    <div class="summary">
+      <span>{{model.totalCreditsLabel}}</span>
+      <span>{{ totalCredits }}</span>
+    </div>
+    <div class="summary">
+      <span>{{model.availableBalanceLabel}}</span>
+      <span>{{ balance }}</span>
+    </div>
+  </div>
+  <hr>
+  <div class="transactionsContainer">
+    <div class="transactionsHeaderContainer">
+      <h2>{{model.transactionsHeader}}</h2>
+      <div class="printTransactionsContainer" (click)="this.doPrint()">
+        <img *ngIf="model.printIcon" [src]="model.printIcon">
+        <a href="javascript:return false;">{{model.printTransactionsText}}</a>
+      </div>
+    </div>
+    <div class="transactionHeader">
+      <div class="datehead" id="datehead">{{model.transactionsDescriptionLabel}}</div>
+      <div class="amounthead" id="amounthead">{{model.transactionsAmountLabel}}</div>
+    </div>
+    <div class="transactions">
+      <ng-container *ngIf="userState.transactionHistory?.pendingTransactions.length > 0">
+        <div class="transaction" *ngFor="let txn of userState.transactionHistory.pendingTransactions">
+          <div class="col">
+            <div class="date">{{txn.accLogDtString}}</div>
+            <div class="description">PENDING - {{txn.logAcquirerName}} - {{txn.accLogId}}
+            </div>
+          </div>
+          <div class="col">
+            <div class="amount">
+              <span *ngIf="txn.logAmount1 && txn.logAmount1 > 0">
+                - {{txn.logAmount1['toMoney'](2)}}
+              </span>
+              <span *ngIf="txn.logAmount2 && txn.logAmount2 > 0">
+                + {{txn.logAmount2['toMoney'](2)}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="userState.transactionHistory?.postedTransactions.length > 0">
+        <div class="transaction" *ngFor="let txn of userState.transactionHistory.postedTransactions">
+          <div class="col">
+            <div class="date">{{txn.accLogDtString}}</div>
+            <div class="description">{{txn.logAcquirerName}} - {{txn.accLogId}}
+            </div>
+          </div>
+          <div class="col">
+            <div class="amount">
+              <span *ngIf="txn.logAmount1 && txn.logAmount1 > 0">
+                - {{txn.logAmount1['toMoney'](2)}}
+              </span>
+              <span *ngIf="txn.logAmount2 && txn.logAmount2 > 0">
+                + {{txn.logAmount2['toMoney'](2)}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

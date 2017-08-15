@@ -1,0 +1,213 @@
+.about-container {
+  justify-content: space-between; }
+  .about-container .box-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    background: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    /* Safari */
+    -webkit-flex-wrap: wrap;
+    /* Safari 6.1+ */
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between; }
+  .about-container a {
+    vertical-align: baseline;
+    color: #f89d20 !important; }
+  .about-container a.orange {
+    color: #f89d20 !important; }
+  .about-container a .active-link {
+    border-bottom: 2px solid #f89d20 !important; }
+  .about-container .bordered {
+    border: 2px solid #eeeeee;
+    padding: 20px;
+    min-height: 260px;
+    overflow: hidden; }
+  .about-container .bordered-none {
+    padding: 20px;
+    min-height: 260px;
+    overflow: hidden; }
+  .about-container .bordered a {
+    color: black; }
+  .about-container .bordered h2 {
+    font-family: 'MuseoSlab-500';
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 26px;
+    color: #4f4e4e;
+    margin-bottom: 6px;
+    padding-top: 10px; }
+  .about-container p .info {
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 23px; }
+  .about-container h3 {
+    margin-bottom: 20px;
+    padding: 20px 20px 0px 0px !important;
+    font-weight: bold;
+    font-family: 'MuseoSlab-500';
+    font-size: 13px;
+    line-height: 20px;
+    color: #4f4e4e; }
+  .about-container .box-container.howToUse {
+    display: inline;
+    column-count: 1;
+    margin: 0px; }
+  .about-container .box-container.icon img {
+    display: block;
+    min-height: 60px;
+    min-width: 60px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    padding: 0px 0; }
+  .about-container .box-container.howToUse h3 {
+    margin-bottom: 20px;
+    margin-top: 0px;
+    padding: 20px 20px 0px 0px !important;
+    font-weight: bold;
+    line-height: 20px;
+    color: #4f4e4e;
+    font-family: 'MuseoSlab-500';
+    font-size: 13px; }
+  .about-container .box-container.howToUse h2 {
+    font-family: 'MuseoSlab-500';
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 26px;
+    color: #4f4e4e;
+    margin-bottom: 6px;
+    padding-top: 10px;
+    background-color: white; }
+  .about-container .card {
+    flex: 0 0 45%;
+    margin: 1rem .25em;
+    max-width: 396px; }
+  .about-container .card-row {
+    flex: 0 0 45%;
+    margin: 1rem .25em; }
+  .about-container .card-row p {
+    font-size: 15px;
+    line-height: 23px; }
+  .about-container .columnContent {
+    display: inline-block;
+    width: 100%;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    margin-bottom: 30px; }
+  .about-container .inner-row {
+    margin-bottom: 25px; }
+  .about-container .icon {
+    background-color: #eeeeee; }
+  .about-container .icon-row {
+    background-color: #eeeeee;
+    min-width: 260px;
+    float: left;
+    margin-right: 20px; }
+  .about-container .icon-row img {
+    display: block;
+    min-height: 60px;
+    min-width: 60px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; }
+  .about-container .info a {
+    color: #f89d20; }
+  .about-container h1 {
+    font-family: 'MuseoSlab-100';
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: normal;
+    color: #aaa9aa;
+    margin-bottom: 10px; }
+  .about-container h2 {
+    font-family: 'MuseoSlab-500';
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 26px;
+    color: #4f4e4e;
+    margin-bottom: 6px;
+    padding-top: 10px; }
+  .about-container li {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+    flex: 0 0  400; }
+  .about-container li .tab {
+    cursor: pointer;
+    cursor: hand;
+    padding-bottom: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    outline: none;
+    padding-top: 10px;
+    font-family: 'MuseoSlab-500';
+    font-size: 16px;
+    color: #f89d20 !important;
+    text-decoration: none; }
+  .about-container li .tab.active-link {
+    border-bottom: 2px solid #f89d20 !important; }
+  .about-container .tabNav {
+    width: 100%; }
+  .about-container ul {
+    display: flex;
+    flex-direction: row;
+    background: #fbead6;
+    padding-left: 30px !important;
+    margin-top: 18px;
+    margin-bottom: 25px; }
+  .about-container /deep/ h4 {
+    font-family: 'ProximaNova-Regular';
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 26px;
+    color: #4f4e4e;
+    margin-bottom: 10px;
+    margin-top: 0; }
+  .about-container .about-header {
+    font-family: 'MuseoSlab-100';
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: normal;
+    color: #aaa9aa;
+    margin-bottom: 10px;
+    margin-top: 20px; }
+  .about-container .about-sub-header {
+    display: block;
+    font-family: 'ProximaNova-Regular';
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 26px;
+    color: #4f4e4e;
+    margin-bottom: 10px; }
+
+@media screen and (max-width: 767px) {
+  .about-container {
+    padding: 15px; }
+
+  .box-container.howToUse {
+    padding: 15px; }
+
+  .card {
+    flex: 1 1 100%; }
+
+  .icon img {
+    width: 100%;
+    height: auto; }
+
+  .icon-row img {
+    display: block;
+    min-height: 60px;
+    min-width: 60px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; } }
+
+/*# sourceMappingURL=about-page.component.css.map */

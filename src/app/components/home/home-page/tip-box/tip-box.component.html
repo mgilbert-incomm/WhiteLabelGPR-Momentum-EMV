@@ -1,0 +1,7 @@
+<div class="tip-box-container" *ngIf="tipBoxCmsModel">
+  <p class="tip-box-header">{{tipBoxCmsModel.tipBoxHeader}}</p>
+  <div class="tip-box-image-container">
+    <img *ngIf="tipBoxCmsModel" [src]="tipBoxCmsModel.tipBoxImage" />
+  </div>
+  <div class="tip-box-description" markdown-to-html [data]="tipBoxCmsModel.tipBoxDescription"></div>
+</div>

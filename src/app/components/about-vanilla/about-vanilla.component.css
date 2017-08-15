@@ -1,0 +1,91 @@
+p {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 23px;
+}
+h1 {
+  font-family: 'MuseoSlab-100';
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: normal;
+  color: #aaa9aa;
+  margin-bottom: 10px;
+}
+h2 {
+  font-family: 'MuseoSlab-500';
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 26px;
+  color: #4f4e4e;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+.bordered h2{
+  font-weight: normal;
+  margin-bottom: 6px;
+
+}
+.columnContent .bordered {
+  height: 100%;
+}
+
+p a{
+  color: #f89d20;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent
+}
+
+.container-body{
+  justify-content: space-between;
+
+}
+
+.container-header{
+  flex: 0 0 100%;
+  flex-direction:column;
+}
+.icon img{
+  width: 100%;
+  height: auto;
+}
+.card {
+  flex: 0 0 45%;
+  margin: 1rem .25em;
+  max-width: 396px;
+
+
+}
+.aboutVanilla .columnContent .bordered {
+  height: 100%;
+}
+
+
+.bordered {
+  border: 2px solid #eeeeee;
+  padding: 20px;
+  height: auto;
+  overflow: hidden;
+}
+
+
+@media screen and (max-width: 520px) {
+
+  .container-body {
+    padding: 15px;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+  .icon img{
+    width: 100%;
+    height: auto;
+  }
+
+}

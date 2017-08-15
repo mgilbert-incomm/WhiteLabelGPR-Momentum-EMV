@@ -1,0 +1,36 @@
+.faq-contact-panel{
+    border-top: 2px solid #eeeeee;
+    margin: 96px 0 30px 30px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+}
+
+.faq-contact-title{
+    font-family: 'MuseoSlab-500';
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #4f4e4e;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.faq-contact-us{
+    margin-top: 8px;
+}
+
+@media screen and (max-width: 1150px) {
+  .faq-contact-panel img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 770px) {
+      .faq-contact-panel img{
+        display: block;
+        margin: 10px auto;
+    }
+}

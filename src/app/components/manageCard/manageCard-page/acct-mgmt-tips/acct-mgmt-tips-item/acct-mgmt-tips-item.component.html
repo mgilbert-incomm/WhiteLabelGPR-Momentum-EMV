@@ -1,0 +1,8 @@
+<div class="tip-item">
+  <h4 [ngClass]="{'accordian-plus': getIsCollapsed(), 'accordian-minus': !getIsCollapsed()}" class="tip-item-header"
+      (click)="toggleIsCollapsed()">{{ tipItem.faqHeader }}</h4>
+  <!--<div [ngClass]="{'open': !getIsCollapsed(), 'close': getIsCollapsed()}" [ngStyle]="{display: getIsCollapsed() ? 'none': 'block'}">-->
+  <div [ngClass]="{'open': !getIsCollapsed(), 'close': getIsCollapsed()}">
+    <p class="tip-item-text">{{ tipItem.faqText }}</p>
+  </div>
+</div>

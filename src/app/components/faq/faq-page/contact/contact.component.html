@@ -1,0 +1,5 @@
+<div class="faq-contact-panel" *ngIf="contactCmsModel">
+  <div class="faq-contact-title">{{contactCmsModel.contactUsHeader}}</div>
+  <img *ngIf="contactCmsModel" [src]="contactCmsModel.contactUsImage"/>
+  <div class="faq-contact-us" markdown-to-html [data]="contactCmsModel.contactUsText"></div>
+</div>

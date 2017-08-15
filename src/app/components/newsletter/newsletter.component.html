@@ -1,0 +1,13 @@
+<div class="newsletter" *ngIf="footerNewsletter != null && footerNewsletter['fields'] != null">
+  <div class="getTheScoop">
+    <h2>{{footerNewsletter.fields.headerText}}</h2>
+    <form id="newsletter">
+      <input type="text" name="newsletter_email" placeholder="{{footerNewsletter.fields.emailHintText}}">
+      <input type="checkbox" checked="" id="newsletter_tc_check" name="newsletter_tc_check" data-code="135"
+             mandatory="true">
+      <label for="newsletter_tc_check" class="optInText">{{footerNewsletter.fields.optInText}}</label>
+      <input type="submit" class="button button-signMe" id="btnGo"
+             value="{{footerNewsletter.fields.signUpButtonText}}">
+    </form>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="manageCardPageContainer pageContainer">
+  <app-managecard-virtualcard-section></app-managecard-virtualcard-section>
+
+  <div class="manageCardContainer accountDetails">
+    <h1 [innerHTML]="manageCardSectionCmsModel?.headerText"></h1>
+    <div class="balAndCardInfoContainer">
+      <div class="balance">
+        <div>{{manageCardSectionCmsModel?.availableBalanceLabel}}</div>
+        <div>
+        <span id="response_ab">
+          <label>
+				    {{ balance }}
+          </label>
+        </span>
+        </div>
+      </div>
+      <div class="cardInfo">
+        <div>Virtual Account Number: <b>**** *** ****<span id="response_cn"> {{ userService.userStateModel?.cardInfo?.cardNumber?.substr(-4, 4) }}</span></b>
+        </div>
+        <div>Expiration Date: <b><span id="response_cn"> {{ userService.userStateModel?.cardInfo?.expMonth}} / 20{{ userService.userStateModel?.cardInfo?.expYear }}</span></b>
+        </div>
+        <div>Status:
+          <span id="response_sn"><b>{{ userService.userStateModel?.balanceInfo?.cardStatusName }}</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <iframe src="/printTransactions" class="printTransactionsContainer" #printTransactionsFrame></iframe>
+  <div class="mobileSubNavigation" *ngIf="manageCardSectionCmsModel?.tabComponents.length > 0"
+       (click)="this.toggleMobileSubNav()">
+    <div class="mobileSubNavigationLogo" *ngIf="manageCardSectionCmsModel?.mobileSubNavigationLogo">
+      <img *ngIf="manageCardSectionCmsModel" [src]="manageCardSectionCmsModel?.mobileSubNavigationLogo"/></div>
+    <div class="currentTab">
+      {{manageCardSectionCmsModel?.tabComponents[this.selectedTabIndex].fields.tabTitle}}
+    </div>
+    <div class="mobileTabs" [hidden]="!this.mobileSubNavOpen">
+      <ng-container *ngFor="let item of manageCardSectionCmsModel?.tabComponents; let i = index">
+        <div class="mobileTab" (click)="this.setSelectedTab(i)" *ngIf="this.selectedTabIndex !== i">
+          {{item.fields.tabTitle}}
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="manageCardTabs">
+    <ul class="tabs">
+      <li class="tab" *ngFor="let item of manageCardSectionCmsModel?.tabComponents; let i = index"
+          [class.selected]="this.selectedTabIndex === i" (click)="this.setSelectedTab(i)">{{item.fields.tabTitle}}
+      </li>
+    </ul>
+    <div class="tabContentContainer">
+      <div class="tabContent" *ngFor="let item of manageCardSectionCmsModel?.tabComponents; let i = index"
+           [hidden]="this.selectedTabIndex !== i">
+        <div *ngIf="item.type === 'modelBalanceAndTransactions'">
+          <app-managecard-balandtrans (printTransactions)="this.printTransactions()"
+                                      [model]="item.fields"></app-managecard-balandtrans>
+        </div>
+        <div *ngIf="item.type === 'modelAssignZip'">
+          <app-manage-card-assign-zip [model]="item.fields"></app-manage-card-assign-zip>
+        </div>
+      </div>
+      <div class="cardTipContainer">
+        <app-acct-mgmt-tips></app-acct-mgmt-tips>
+      </div>
+    </div>
+  </div>
+</div>

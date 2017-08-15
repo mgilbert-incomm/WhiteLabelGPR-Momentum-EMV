@@ -1,0 +1,5 @@
+<ng-container *ngFor="let item of manageCardSectionCmsModel?.tabComponents; let i = index">
+  <div *ngIf="item.type === 'modelBalanceAndTransactions'">
+    <app-managecard-balandtrans [model]="item.fields"></app-managecard-balandtrans>
+  </div>
+</ng-container>

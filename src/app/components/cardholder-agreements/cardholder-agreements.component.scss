@@ -1,0 +1,51 @@
+.cardholder-agreements-container{
+    height: 550px;
+    margin-bottom: 30px;
+    align-content: flex-start;
+}
+.cardholder-agreements-header{
+    font-family: 'MuseoSlab-100';
+    font-size: 40px;
+    line-height: 48px;
+    color: #aaa9aa;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+
+.cardholder-agreements-common-text{
+    font-size: 15px;
+    line-height: 23px;
+    font-family: 'ProximaNova-Regular';
+}
+
+.cardholder-agreements-subheader{
+    @extend .cardholder-agreements-common-text;
+    color: #656565;
+}
+
+.cardholder-agreements-anchor{
+    @extend .cardholder-agreements-common-text;
+    text-align: left;
+    vertical-align: baseline;
+}
+
+.cardholder-agreements-anchor:hover{
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+
+.cardholder-agreements-anchor-container{
+}
+
+.cardholder-agreements-anchor-image{
+    padding-right: 10px;
+    position: relative;
+    top: 12px;
+}
+
+@media screen and (max-width: 770px) {
+    .cardholder-agreements-header{
+        font-size: 28.125px;
+        line-height: 36px;
+    }
+}

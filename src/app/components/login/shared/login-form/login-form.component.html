@@ -1,0 +1,47 @@
+<div [ngClass]="{'login-page-form': isLoginPageForm, 'home-page-form': !isLoginPageForm}">
+  <div class="login-panel" *ngIf="loginFormCmsModel">
+    <div class="login-header-message">{{loginFormCmsModel?.introText}}</div>
+    <form [formGroup]="loginForm" class="login-form">
+      <div class="card-num-panel">
+        <label for="card_num">{{loginFormCmsModel.cardNumberLabel}}</label>
+        <input type="text" formControlName="cardNumber" required maxlength="16" class="card-number" name="cardNumber" id="card_num" placeholder="{{loginFormCmsModel.cardNumberInputText}}">
+      </div>
+
+      <div class="exp-cvv-container">
+        <div class="exp-panel">
+          <label>{{loginFormCmsModel.expirationDateLabel}}</label>
+          <div >
+            <input type="text" formControlName="expMonth" maxlength="2" required class="exp-month" id="exp_mm" name="exp_mm" minlength="2" placeholder="{{loginFormCmsModel.monthHintText}}">
+            <input type="text" formControlName="expYear" maxlength="2" required class="exp-year" id="exp_yy" name="exp_yy" minlength="2" placeholder="{{loginFormCmsModel.yearHintText}}">
+          </div>
+        </div>
+
+        <div class="cvv-panel">
+          <label>{{loginFormCmsModel.cvvLabel}}</label>
+          <img class="cvv-tooltip-img" (mouseover)="toggleHoverImage()" (mouseout)="toggleHoverImage()" *ngIf="loginFormCmsModel" [src]="loginFormCmsModel.cvvTooltipImage" />
+          <img class="cvv-tooltip-hover-img active"
+               *ngIf="loginFormCmsModel"
+               [ngClass]="{'cvv-tooltip-hover-img-active': displayCvvHoverImage,
+                        'cvv-tooltip-hover-img-inactive': !displayCvvHoverImage}"
+               [src]="loginFormCmsModel.cvvTooltipHoverImage" />
+          <div>
+            <input type="text" formControlName="cvv" required [ngClass]="(loginForm.controls['cvv'].hasError('required') && loginForm.controls['cvv'].touched)?'cvv error':'cvv'" id="card_cvv" name="card_cvv" minlength="3" maxlength="3" placeholder="{{loginFormCmsModel.cvvHintText}}">
+          </div>
+          <div *ngIf="loginForm.controls['cvv'].hasError('required') && loginForm.controls['cvv'].touched" class="error"></div>
+        </div>
+      </div>
+
+      <div class="login-button-container">
+        <button id="card_details_form_button" (click)="this.performLogin()" type="submit" class="login-submit-button">{{loginFormCmsModel.signInButtonText}}</button>
+      </div>
+    </form>
+
+    <div class="login-footer-panel">
+      <p class="login-footer-message">{{loginFormCmsModel.helpText}}</p>
+    </div>
+
+  </div>
+  <div class="login-page-footer-message" *ngIf="loginFormCmsModel">
+    {{loginFormCmsModel.helpText}}
+  </div>
+</div>

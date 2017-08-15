@@ -1,0 +1,5 @@
+<div class="faq-item" (click)="toggleIsCollapsed()">
+  <div class="faq-item-header" [ngClass]="{'accordian-plus': isCollapsed,
+    'accordian-minus': !isCollapsed}" >{{faqItem.faqHeader}}</div>
+  <div class="faq-item-text" [ngClass]="{'collapsed': isCollapsed, 'not-collapsed': !isCollapsed}" [innerHTML]="faqItem.faqText"></div>
+</div>

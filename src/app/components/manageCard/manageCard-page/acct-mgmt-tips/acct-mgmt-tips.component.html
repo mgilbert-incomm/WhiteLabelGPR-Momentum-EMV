@@ -1,0 +1,6 @@
+<div class="tips-container" *ngIf="!isEmpty()">
+  <h3 class="railhead">{{ acctMgmtTipsContent?.headerText}}</h3>
+  <div class="tips-item-container" id="tips-container">
+    <app-acct-mgmt-tips-item *ngFor="let tipItem of acctMgmtTipsContent?.cardTips" [tipItem]="tipItem"></app-acct-mgmt-tips-item>
+  </div>
+</div>

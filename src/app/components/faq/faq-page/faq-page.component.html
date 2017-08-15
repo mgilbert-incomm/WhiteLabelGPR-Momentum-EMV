@@ -1,0 +1,17 @@
+<div class="pageContainer faq-container" *ngIf="faqCmsModel">
+
+  <div class="faq-item-container">
+    <div class="faq-header">
+      {{faqCmsModel?.headerText}}
+    </div>
+    <!-- <div class="faq-sub-header">{{faqCmsModel.subHeaderText}}</div> -->
+    <div class="faq-sub-header" markdown-to-html [data]="faqCmsModel.subHeaderText"></div>
+    <div *ngFor="let faqItem of faqCmsModel.faqItems">
+        <app-faq-item [faqItem]="faqItem"></app-faq-item>
+    </div>
+  </div>
+
+  <div class="contact-container">
+    <app-contact [contactCmsModel]="faqCmsModel.contactCmsModel"></app-contact>
+  </div>
+</div>

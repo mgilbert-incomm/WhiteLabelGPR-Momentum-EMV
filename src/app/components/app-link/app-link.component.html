@@ -1,0 +1,7 @@
+<a *ngIf="url.match('^(https?|ftp|file)://')" href="{{url}}" [attr.target]="target">
+  <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+</a>
+<a [routerLink]="url" *ngIf="!url.match('^(https?|ftp|file)://')" [attr.target]="target">
+  <ng-container *ngTemplateOutlet="contentTpl"></ng-container>
+</a>
+<ng-template #contentTpl><ng-content></ng-content></ng-template>

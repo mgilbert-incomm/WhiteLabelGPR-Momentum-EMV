@@ -1,0 +1,25 @@
+version: 0.1
+env:
+    variables:
+        S3_BUCKET: "momentum-staging"
+        BUILD_ENV: "prod"
+phases:
+    install:
+        commands:
+            - echo Installing source NPM dependencies...
+            - npm install
+            - npm install -g @angular/cli
+
+    build:
+        commands:
+            - echo Build started on `date`
+            - ng build --prod
+    post_build:
+         commands:
+            - aws s3 cp dist s3://momentum-staging --recursive
+            - echo Build completed on `date`
+artifacts:
+    files:
+        - '**/*'
+    base-directory: 'dist*'
+    discard-paths: yes

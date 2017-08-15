@@ -1,0 +1,29 @@
+<div class="manageVirtualCardContainer">
+  <h1 [innerHTML]="manageVirtualCardCmsModel?.headerText"></h1>
+  <div class="virtualCardUpperContainer">
+    <img class="cardImage" *ngIf="this.cardImageData" (click)="displayVirtualCardModal()" [src]="this.cardImageData" [class.on]="!this.frontVisible"/>
+    <div class="printContainer" (click)="this.printVirtualCard()" *ngIf="this.manageVirtualCardCmsModel">
+      <img *ngIf="manageVirtualCardCmsModel" [src]="manageVirtualCardCmsModel.printIcon" class="printIcon"/>
+      <a href="javascript:void(0)">{{manageVirtualCardCmsModel?.printText}}</a>
+      <iframe id="printFrame" src="/printVirtualCard" #printVCContainer></iframe>
+    </div>
+    <div class="flipLinkContainer" (click)="this.flipCard()">
+      <img *ngIf="this.manageVirtualCardCmsModel" [src]="manageVirtualCardCmsModel.flipCardIcon"/>
+
+      <a href="javascript:void(0)">{{this.flipCardText}}</a>
+    </div>
+  </div>
+  <div class="howToUseContainer cardHelp">
+    <h2>{{manageVirtualCardCmsModel?.howToUseHeaderText}}</h2>
+    <div class="row">
+      <ol>
+        <li *ngFor="let item of manageVirtualCardCmsModel?.howToUseItems">{{item.fields.itemText}}</li>
+      </ol>
+    </div>
+    <div class="row" *ngFor="let item of manageVirtualCardCmsModel?.howToUseLinks">
+      <a [href]="item.linkUrl">
+        {{item.linkName}}
+      </a>
+    </div>
+  </div>
+</div>

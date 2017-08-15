@@ -1,0 +1,82 @@
+<div class="pageContainer about-container">
+
+
+  <h1 [innerHTML]="aboutCmsModel?.headerText"></h1>
+  <div [innerHTML]="aboutCmsModel?.subHeaderText"></div>
+  <ul class="tabNav">
+
+        <li *ngFor="let item of aboutCmsModel?.tabItems" (click)="setSelectedTab(item)" id="{{item.tabText}}">
+            <div class="tab {{selectedTab.tabText == item.tabText ? 'active-link' : '' }}"> {{item.tabText}}</div>
+        </li>
+
+    </ul>
+
+
+    <div [ngClass]="(selectedTab?.additionalCssClasses + ' box-container')">
+
+        <ng-container *ngFor="let infoItem of selectedTab?.tabContentItems">
+
+
+            <ng-container *ngIf="infoItem.groupedItems; then itemCard else card"></ng-container>
+
+
+            <ng-template #card>
+                <ng-container *ngIf="infoItem.groupName; then itemCard else innercard">
+                </ng-container>
+
+                <ng-template #innercard>
+                <div class=" card">
+                    <div [ngClass]="infoItem.fieldEntry === 'Learn More' ? 'bordered-none': 'bordered'">
+
+                        <div *ngIf="infoItem.icon" class="icon">
+                            <img [src]="infoItem.icon" alt=""></div>
+                        <h2 *ngIf="selectedTab.tabText !== 'Features'">{{infoItem.fieldEntry}}</h2>
+                        <p class="info" [innerHtml] ="infoItem.text"></p>
+                    </div>
+                </div>
+                </ng-template>
+
+            </ng-template>
+
+
+            <ng-template #itemCard>
+
+                <div class="bordered card-row">
+
+
+
+                    <h3>{{infoItem.groupName}}</h3>
+                    <div class = "inner-row" *ngIf="!infoItem.groupedItems">
+                        <div *ngIf="infoItem.icon " class="icon-row group">
+                            <img [src]="infoItem.icon" alt="">
+                        </div>
+                        <h2>{{infoItem.fieldEntry}}</h2>
+
+                        <p class="info" [innerHtml] ="infoItem.text"></p>
+
+                    </div>
+                <div class="inner-row" *ngFor="let groupedItem of infoItem.groupedItems">
+
+
+                    <div *ngIf="groupedItem.icon " class="icon-row group">
+                        <img [src]="groupedItem.icon" alt="">
+                    </div>
+                    <h2>{{groupedItem.fieldEntry}}</h2>
+
+                    <p class="info" [innerHtml]="groupedItem.text"></p>
+                </div>
+                </div>
+            </ng-template>
+
+    </ng-container>
+
+    <!-- Empty card for alignment issue -->
+    <div class="card"></div>
+
+</div>
+<!-- end content -->
+
+</div>
+
+
+

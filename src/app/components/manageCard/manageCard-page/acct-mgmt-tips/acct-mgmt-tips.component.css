@@ -1,0 +1,14 @@
+.tips-container {
+  border-top: 2px solid #eeeeee;
+  margin-bottom: 5px;
+  margin-top: 30px; }
+
+h3.railhead {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: 'MuseoSlab-500';
+  font-size: 13px;
+  line-height: 20px;
+  color: #4f4e4e; }
+
+/*# sourceMappingURL=acct-mgmt-tips.component.css.map */

@@ -1,0 +1,18 @@
+<div class="container-body pageContainer">
+
+  <h1 class="container-header">{{aboutVanillaCmsModel?.aboutVanillaHeader}}</h1>
+
+  <div *ngFor="let cardItem of aboutVanillaCmsModel?.aboutCards" class="card">
+    <div class="bordered">
+      <div class="icon"><img src={{cardItem.vanillaProductImage}} alt=""></div>
+      <h2>{{cardItem.vanillaProductHeader}}</h2>
+      <p></p><p><span style="line-height: 1.6em;" [innerHTML]="cardItem.title"></span></p>
+
+      <p [innerHTML]="cardItem.productDescription"></p>
+
+      <p><a href="http://{{cardItem.productUrl}}" target="_blank">{{cardItem.productUrl}}</a></p>
+      <p></p>
+
+    </div>
+  </div>
+</div>
